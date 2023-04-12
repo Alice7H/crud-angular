@@ -9,11 +9,17 @@ import { Course } from '../../model/course';
 export class CourseListComponent {
   @Input() courses: Course[] = [];
   @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter();
+
   readonly displayedColumns: string[] = ['name', 'category', 'actions'];
 
-  constructor(){}
+  constructor() { }
 
-  onAdd() {
+  onAdd(): void {
     this.add.emit(true);
+  }
+
+  onEdit(course: Course):void {
+    this.edit.emit(course);
   }
 }
