@@ -9,7 +9,8 @@ import { Course } from '../../model/course';
 export class CourseListComponent {
   @Input() courses: Course[] = [];
   @Output() add = new EventEmitter(false);
-  @Output() edit = new EventEmitter();
+  @Output() edit = new EventEmitter(false);
+  @Output() remove = new EventEmitter(false);
 
   readonly displayedColumns: string[] = ['name', 'category', 'actions'];
 
@@ -21,5 +22,9 @@ export class CourseListComponent {
 
   onEdit(course: Course):void {
     this.edit.emit(course);
+  }
+
+  onDelete(course: Course): void {
+    this.remove.emit(course);
   }
 }
