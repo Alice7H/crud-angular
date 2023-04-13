@@ -40,10 +40,7 @@ export class CourseFormComponent implements OnInit {
 
   onSubmit(){
     this.service.save(this.form.value)
-      .subscribe({
-        next: () => this.onSuccess(),
-        error: () => this.onError()
-      });
+      .subscribe({ next: () => this.onSuccess(), error: () => this.onError() });
   }
 
   onCancel(){
