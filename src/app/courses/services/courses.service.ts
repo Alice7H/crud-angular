@@ -2,6 +2,7 @@ import { Course } from './../model/course';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { first, tap } from 'rxjs/operators';
+import { CoursePage } from '../model/course-page';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,9 @@ export class CoursesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  list() {
-    return this.httpClient.get<Course[]>(this.API)
-    .pipe(first()//,tap(courses => console.log(courses))
-    );
+  list(pageNumber: number = 0, pageSize: number = 5) {
+    return this.httpClient.get<CoursePage>(`${this.API}`, {params: {pageNumber, pageSize}})
+    .pipe(first());
   }
 
   loadById(id: string) {

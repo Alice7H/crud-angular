@@ -7,12 +7,11 @@ import { CategoryPipe } from './pipes/category.pipe';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 
-
 @NgModule({
   declarations: [
     ErrorDialogComponent,
     CategoryPipe,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
   ],
   imports: [
     AppMaterialModule,
