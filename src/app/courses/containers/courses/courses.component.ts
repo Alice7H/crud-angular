@@ -11,7 +11,7 @@ import { CoursePage } from './../../model/course-page';
 import { MatPaginator, PageEvent, MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CourseListComponent } from '../../components/course-list/course-list.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 
@@ -20,7 +20,7 @@ import { MatCardModule } from '@angular/material/card';
     templateUrl: './courses.component.html',
     styleUrls: ['./courses.component.scss'],
     standalone: true,
-    imports: [MatCardModule, MatToolbarModule, NgIf, CourseListComponent, MatPaginatorModule, MatProgressSpinnerModule, AsyncPipe]
+    imports: [MatCardModule, MatToolbarModule, CourseListComponent, MatPaginatorModule, MatProgressSpinnerModule, AsyncPipe]
 })
 export class CoursesComponent {
   courses$: Observable<CoursePage> | null = null;

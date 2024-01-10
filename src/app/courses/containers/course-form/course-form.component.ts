@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NonNullableFormBuilder, UntypedFormArray, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Location, NgIf, NgFor } from '@angular/common';
+import { Location } from '@angular/common';
 import { CoursesService } from '../../services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
@@ -21,7 +21,7 @@ import { MatCardModule } from '@angular/material/card';
     templateUrl: './course-form.component.html',
     styleUrls: ['./course-form.component.scss'],
     standalone: true,
-    imports: [MatCardModule, MatToolbarModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, NgIf, MatSelectModule, MatOptionModule, MatButtonModule, MatIconModule, NgFor]
+    imports: [MatCardModule, MatToolbarModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatButtonModule, MatIconModule]
 })
 export class CourseFormComponent implements OnInit {
   form!: FormGroup;
