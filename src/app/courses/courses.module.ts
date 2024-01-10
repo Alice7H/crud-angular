@@ -10,17 +10,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CourseListComponent } from './components/course-list/course-list.component';
 
 @NgModule({
-  declarations: [
-    CoursesComponent,
-    CourseFormComponent,
-    CourseListComponent
-  ],
-  imports: [
-    CommonModule,
-    CoursesRoutingModule,
-    AppMaterialModule,
-    SharedModule,
-    ReactiveFormsModule,
-  ]
+    imports: [
+        CommonModule,
+        CoursesRoutingModule,
+        AppMaterialModule,
+        SharedModule,
+        ReactiveFormsModule,
+        CoursesComponent,
+        CourseFormComponent,
+        CourseListComponent,
+    ]
 })
 export class CoursesModule { }
